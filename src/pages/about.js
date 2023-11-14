@@ -1,5 +1,4 @@
 import Animatedtext from "@/components/Animatedtext";
-
 import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout";
@@ -54,27 +53,28 @@ const about = () => {
                 Biography
               </h2>
               <p className="my-4 font-medium">
-                "Hello, I'm Rahi Chauhan, a dedicated web developer with a
-                passion for crafting the digital world. I specialize in backend
-                development, where I thrive on architecting powerful and
-                efficient systems that drive the web.
-              </p>
+  &apos;Hello, I&apos;m Rahi Chauhan, a dedicated web developer with a
+  passion for crafting the digital world. I specialize in backend
+  development, where I thrive on architecting powerful and
+  efficient systems that drive the web.&apos;
+</p>
+<p className="my-4 font-medium">
+  &apos;My journey as a web developer is marked by a relentless pursuit
+  of excellence. I&apos;m constantly honing my skills and staying at
+  the forefront of technology to deliver cutting-edge solutions.&apos;
+</p>
+
               <p className="my-4 font-medium">
-                My journey as a web developer is marked by a relentless pursuit
-                of excellence. I'm constantly honing my skills and staying at
-                the forefront of technology to deliver cutting-edge solutions.
-              </p>
-              <p className="my-4 font-medium">
-                With a wealth of experience in coding and problem-solving, I'm
+               &apos; With a wealth of experience in coding and problem-solving, I&apos;m
                 adept at turning concepts into functional, high-performance
                 websites and applications. My love for clean, maintainable code
                 ensures that every project I touch is not only user-friendly but
-                also developer-friendly.
+                also developer-friendly.&apos;
               </p>
               <p className="my-4 font-medium">
-                Join me in the exciting realm of web development, where I turn
+                &apos;Join me in the exciting realm of web development, where I turn
                 ideas into reality and shape the online experiences of tomorrow.
-                Let's code the future together."
+                Let&apos;s code the future together.&apos;
               </p>
             </div>
             <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light
@@ -116,7 +116,7 @@ const about = () => {
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75  dark:text-light/75
                  xl:text-center md:text-lg sm:text-base xs:text-sm">
-                  Internship Experience
+                 Internship Experience
                 </h2>
               </div>
             </div>

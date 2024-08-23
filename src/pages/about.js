@@ -9,10 +9,11 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
+import Script from "next/script"; // Import next/script for handling Google Analytics
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
-  //Three hooks provided by framer-motion
+  // Three hooks provided by framer-motion
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { duration: 3000 });
   const isInView = useInView(ref, { once: true });
@@ -42,6 +43,22 @@ const About = () => {
         <meta
           name="description"
           content="Passionate web developer with a strong penchant for backend technologies. I thrive on building robust and efficient systems that power the web. Committed to crafting seamless user experiences through cutting-edge server-side solutions. Constantly exploring new technologies and staying ahead in the ever-evolving world of web development"
+        />
+        {/* Add the Google Analytics script with next/script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-6DZG57JG5F`} // Replace YOUR_TRACKING_ID with your actual tracking ID
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-6DZG57JG5F'); // Replace YOUR_TRACKING_ID with your actual tracking ID
+            `,
+          }}
         />
       </Head>
       <TransitionEffect />

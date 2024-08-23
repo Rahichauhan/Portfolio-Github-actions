@@ -1,30 +1,29 @@
-name: Portfolio Deployment
+name: Vercel Production Deployment
+
+env:
+    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    Deploy-Production:
+        runs-on: ubuntu-latest
+        steps:
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.15.0'
+            - uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: npm install
+            - name: Install Vercel CLI
+              run: npm install --global vercel
 
-    - name: Build the project
-      run: npm run build  # Adjust the build command if necessary
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-    - name: Deploy to Vercel
-      run: npx vercel --prod
-      env:
-        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}  # Optional, add if needed
+            - name: Build Project Artifacts
+              run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Deploy Project Artifacts
+              run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

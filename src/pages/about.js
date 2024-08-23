@@ -36,7 +36,7 @@ const about = () => {
   return (
     <>
       <Head>
-        <title>Rahi Chauhan | About page</title>
+        <title>Rahi Chauhan | About page..</title>
         <meta
           name="description"
           content="Passionate web developer with a strong penchant for backend technologies. I thrive on building robust and efficient systems that power the web. Committed to crafting seamless user experiences through cutting-edge server-side solutions. Constantly exploring new technologies and staying ahead in the ever-evolving world of web development"
